@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AMORTIZACION.AddInfo"
+             Title="Amortizacion"
+             BackgroundImageSource="https://img.freepik.com/vector-gratis/mano-hombre-negocios-monedas-economia-financiera_24640-447.jpg">
+
+    <StackLayout HorizontalOptions="CenterAndExpand">
+        <Frame BackgroundColor="#EF5350" BorderColor="black" Padding="0" Margin="40,50,40,10" CornerRadius="50" HorizontalOptions="FillAndExpand">
+            <StackLayout Orientation="Horizontal">
+                <Image Source="https://cdn-icons-png.flaticon.com/512/1424/1424818.png" HeightRequest="0" WidthRequest="38"/>
+                <Entry x:Name="txtMonto" Placeholder="Digite el monto" 
+               TextColor="Black" PlaceholderColor="Black" Keyboard="Numeric" VerticalOptions="CenterAndExpand" />
+                </StackLayout>
+        </Frame>
+
+        <Frame BackgroundColor="#EF5350" BorderColor="black" Padding="0" Margin="20,30,20,10" CornerRadius="50" HorizontalOptions="FillAndExpand">
+            <StackLayout Orientation="Horizontal">
+                <Image Source="https://images.vexels.com/media/users/3/204928/isolated/preview/a2da74a1aa9c01010914cfbb3d84212d-trazo-de-simbolo-de-porcentaje.png" HeightRequest="0" WidthRequest="38"/>
+
+                <Entry x:Name="txtTasa" Placeholder="Digite la tasa de interes (Mensual %)" 
+               TextColor="Black" PlaceholderColor="Black" Keyboard="Numeric" VerticalOptions="CenterAndExpand" />
+            </StackLayout>
+        </Frame>
+
+
+        <Frame BackgroundColor="#EF5350" BorderColor="black" Padding="0" Margin="40,40,40,28" CornerRadius="50" HorizontalOptions="FillAndExpand">
+            <StackLayout Orientation="Horizontal">
+                <Image Source="https://cdn-icons-png.flaticon.com/512/28/28301.png" HeightRequest="0" WidthRequest="38"/>
+
+                
+                
+                <Entry x:Name="txtCuotas" Placeholder="Numero de Cuotas" 
+                TextColor="Black" PlaceholderColor="Black"  Keyboard="Numeric" VerticalOptions="CenterAndExpand"   />
+            </StackLayout>
+        </Frame>
+
+        <StackLayout Margin="20,0,20,0">
+            <Label Text="Escoja el tiempo del interes y cuotas" 
+               TextColor="White"  FontSize="22" FontAttributes="Bold" HorizontalTextAlignment="Center"  ></Label>
+
+        <Picker x:Name="Picker" Title="Escoger" SelectedIndexChanged="Picker_OnSelectedIndexChanged"
+                    TextColor="Black" TitleColor="Black"  FontAttributes="Bold" Margin="10,0,0,0"   ></Picker>
+            
+          
+
+        <Label Text="Escoja el tipo de amortizacion" 
+               TextColor="White"   FontSize="22" FontAttributes="Bold"  HorizontalTextAlignment="Center"   ></Label>
+
+        <Picker x:Name="pk_tipo" Title="Escoger" SelectedIndexChanged="Pk_tipo_OnSelectedIndexChanged"
+                TitleColor="Black" TextColor="Black" FontAttributes="Bold" Margin="10,0,0,0"   ></Picker>
+            
+            
+            
+
+        <Label x:Name ="txt_venoanti"  Text="Vencido o Anticipado" IsVisible="False"
+               TextColor="White"   FontSize="22" FontAttributes="Bold" HorizontalTextAlignment="Center"   ></Label>
+
+        <Picker x:Name="pk_fijo" Title="Escoger" SelectedIndexChanged="Pk_fijo_OnSelectedIndexChanged"
+                IsVisible="False" TitleColor="Black" TextColor="Black" FontAttributes="Bold" Margin="10,0,0,0"  ></Picker>
+            
+            
+            
+
+        <Entry Placeholder="Cuota Inicial" x:Name="txt_anticipada" 
+               IsVisible="False" TextColor="Black"  Keyboard="Numeric" ></Entry>
+            
+            
+
+        <Label x:Name="txt_variable" Text="Escoja Creciente o Decreciente"
+               IsVisible="False"  TextColor="White"   FontSize="22" FontAttributes="Bold" HorizontalTextAlignment="Center"  ></Label>
+
+        <Picker x:Name="pk_variable" Title="Escoger" SelectedIndexChanged="Pk_variable_OnSelectedIndexChanged" 
+                IsVisible="False"  TitleColor="Black" TextColor="Black" FontAttributes="Bold" Margin="10,0,0,0" ></Picker>
+
+        </StackLayout>
+
+        <Frame BackgroundColor="#EF5350" BorderColor="black" Padding="0" Margin="30,10,40,0" CornerRadius="50" HorizontalOptions="FillAndExpand">
+            <StackLayout Orientation="Horizontal">
+                <Image Source="https://cdn-icons-png.flaticon.com/512/16/16363.png" HeightRequest="0" WidthRequest="38"/>
+                <Entry x:Name="txt_creciente" Placeholder="Valor Creciente" IsVisible="False"
+               TextColor="Black" VerticalOptions="CenterAndExpand"   ></Entry>
+            </StackLayout>
+        </Frame>
+
+
+
+
+
+        <Frame BackgroundColor="#EF5350" BorderColor="black" Padding="0" Margin="30,0,40,0" CornerRadius="50" HorizontalOptions="FillAndExpand">
+            <StackLayout Orientation="Horizontal">
+                <Image Source="https://cdn-icons-png.flaticon.com/512/16/16363.png" HeightRequest="0" WidthRequest="38"/>
+                <Entry x:Name="txt_decreciente" Placeholder="Valor Decreciente" IsVisible="False"
+               TextColor="Black"   Keyboard="Numeric" VerticalOptions="CenterAndExpand"  ></Entry>
+            </StackLayout>
+        </Frame>
+        <Button x:Name="btnGenerar" Text="Enviar datos" Clicked="BtnGenerar_OnClicked"
+               TextColor="Black" FontAttributes="Bold" BackgroundColor="#EF5350"  CornerRadius="100" Margin="20,0,20,0"   />
+        
+
+    </StackLayout>
+</ContentPage>
